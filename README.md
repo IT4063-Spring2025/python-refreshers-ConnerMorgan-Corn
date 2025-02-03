@@ -95,29 +95,29 @@ PYDEVD_DISABLE_FILE_VALIDATION=1 JUPYTER_PLATFORM_DIRS=1 pytest --capture=sys
 ---------------
 ## 💭 Reflection and Self Assessment
 
-**I learned:** (repeat as needed)
+**I learned:** I need to work on Python projects in my own time to increase farmiliarty with Python Syntax. But also how to work with concatenate functions.
 - .
 
-**I struggled with:** (repeat as needed)
+**I struggled with:** Remebering how to write in Python Syntax. It took awhile, but I have a decent idea of what I am doing. 
 - .
 
-**I need the instructor to help me with:** (repeat as needed)
+**I need the instructor to help me with:** At the moment I cannot think of anything I need assitance with. 
 - .
 
 **How long did it take you to complete this assignment? and reflect on that**
-[ ] hours.
+[2] hours. I worked on this in bursts, sometimes while partially distracted. So I know I could have done it faster if I fully devoted my attention to the assingment. 
 
-**If I were to do this assignment again, I would:** (repeat as needed)
+**If I were to do this assignment again, I would:** Devote my full attention to the assigment and/or work in a team/partnership. 
 - .
 
-**💯 Self Grade:** For this assignment, based on my work and my reflections I should get [ ] out of 20.
+**💯 Self Grade:** For this assignment, based on my work and my reflections I should get [20] out of 20.
 
 --------------------
 ## 📚 References and Citations
-**I used the following links, books, and other resources in my work:** (repeat as needed)
+**I used the following links, books, and other resources in my work:** https://numpy.org/doc/stable/reference/generated/numpy.concatenate.html, https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange,  https://numpy.org/doc/2.1/reference/generated/numpy.full_like.html
 - .
   
-**I received help from the following people:** (repeat as needed)
+**I received help from the following people:** My roomate Gavin, who is far more knowledgeable in Python than I
 - . 
 
 ---
