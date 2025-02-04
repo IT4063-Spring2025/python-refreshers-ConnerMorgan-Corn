@@ -18,7 +18,7 @@
 # - 🚩 - Checkpoint; marks a good spot for you to commit your code to git
 # - 🕵️ - Tester; Don't modify code blocks starting with this emoji
 
-# In[ ]:
+# In[82]:
 
 
 # 🦉 Usually, the first cell in a notebook, is where'd import all modules and third-party modules.
@@ -26,6 +26,7 @@
 
 # 👨🏻‍💻 Use this Code block to import the modules you will need.
 import math
+import numpy as nb
 
 
 # ## Part 1: Python Basics
@@ -33,15 +34,15 @@ import math
 # ### Exercise - Demo
 # Write a python function that takes 2 numbers `num1` and `num2` and returns the addition.
 
-# In[ ]:
+# In[6]:
 
 
 # 👨🏻‍💻 Fix the code below so it returns the correct output.
 def simple_add(num1, num2):
-    return 0
+    return (num1 + num2)
 
 
-# In[ ]:
+# In[7]:
 
 
 # 🕵️ This code block checks your answer.
@@ -55,15 +56,18 @@ print("✅ worked correctly")
 # ### Exercise
 # Write a python function that takes a number `num` as a function argument and returns `even` or `odd`.
 
-# In[ ]:
+# In[18]:
 
 
 # 👨🏻‍💻 Fix the code below so it returns the correct output.
 def is_even_or_odd(num):
-    return "even or odd"
+    if num % 2 == 0:
+        return "even"
+    else:
+        return "odd"
 
 
-# In[ ]:
+# In[13]:
 
 
 # 🕵️ This code block checks your answer. 
@@ -92,15 +96,22 @@ else:
 # - If a year is divisible by 4 but not by 100, then it is a leap year. If a year is divisible by both 4 and 100, go to the next step.
 # - If a year is divisible by 100 but not by 400, then it is a common year. If a year is divisible by both, then it is a leap year.
 
-# In[ ]:
+# In[20]:
 
 
 # 👨🏻‍💻 Fix the code below so it returns the correct output.
 def is_leap_year(year):
-  return False
+  if year % 4 != 0:
+    return False #Not a leap year, not divisible by 4
+  elif year % 100 != 0:
+    return True # Divisisble by 4, but not 100
+  elif year % 400 == 0:
+    return True #Divisible by 4, 100, and 400.
+  else:
+    return False #divisible by 100 but not 400.
 
 
-# In[ ]:
+# In[21]:
 
 
 # 🕵️ This code block checks your answer. 
@@ -123,15 +134,15 @@ else:
 # write a python function to convert the temperature from Celsius to Fahrenheit
 # $$ F^{\circ}=C^{\circ}\times\frac{9}{5}+32 $$
 
-# In[ ]:
+# In[16]:
 
 
 # 👨🏻‍💻 Fix the code below so it returns the correct output.
 def convert_celsius_to_fahrenheit(celsius):
-  return 0
+  return celsius * (9/5) + 32
 
 
-# In[ ]:
+# In[17]:
 
 
 # 🕵️ This code block checks your answer.
@@ -156,15 +167,17 @@ else:
 # - **🦉: check out the [following on the course website](//it4063c.github.io/course-notes/refreshers/python#returning-multiple-values-in-the-same-function) for an example**
 # - **🦉: You'll need to return `area` and `circumference` in that order**
 
-# In[ ]:
+# In[25]:
 
 
 # 👨🏻‍💻 Fix the code below so it returns the correct output.
-def get_area_and_circumference_of_circle(radius):
-  return 0, 0
+def get_area_and_circumference_of_circle(radius): 
+  area = math.pi * radius**2
+  circumfrence = math.pi* 2 * radius
+  return area, circumfrence
 
 
-# In[ ]:
+# In[26]:
 
 
 # 🕵️ This code block checks your answer.
@@ -191,6 +204,8 @@ try:
 
 except AssertionError as e:
   print(e)
+else:
+  print("✅ worked correctly")
 
 
 # > 🚩 : Make a git commit here
@@ -203,22 +218,30 @@ except AssertionError as e:
 # 
 # 🦉 For a reminder on how to loop over a range of numbers. Checkout the [course website's refresher on python](//it4063c.github.io/course-notes/refreshers/python#for-loops)
 
-# In[ ]:
+# In[56]:
 
 
 # 👨🏻‍💻 Fix the code below so it returns the correct output.
 def fizz_buzz(n):
     result = []
-    
-    return result
+    for num in range(1, n + 1):
+        if num % 3 == 0 and num % 5 == 0:
+            result.append("FizzBuzz")  # Multiple of 3 and 5
+        elif num % 3 == 0:
+            result.append("Fizz")  # Multiple of 3
+        elif num % 5 == 0:
+            result.append("Buzz")  # Multiple of 5
+        else:
+            result.append(num)  # Normal number
+    return result  # Return the list
 
 
-# In[ ]:
+# In[57]:
 
 
 # 🕵️ This code block checks your answer.
 try:
-    assert fizz_buzz(25) == [
+    assert fizz_buzz(24) == [
         1,
         2,
         "Fizz",
@@ -265,10 +288,10 @@ else:
 # 
 # 📜 [Here's a link to the `numpy.arange` function](https://numpy.org/doc/stable/reference/generated/numpy.arange.html?highlight=arange#numpy.arange)
 
-# In[ ]:
+# In[69]:
 
 
-np.
+nb.arange(3, 15, 3)
 
 
 # > 🚩 : Make a git commit here
@@ -283,18 +306,18 @@ np.
 # - 📜 numpy.fill function
 # - 📜 numpy.full_like function
 
-# In[ ]:
+# In[90]:
 
 
-input_array = np.array([1,2,3,4,5])
-result = 
+input_array = nb.array([1, 2, 3])  # Example input array
+result = nb.full_like(input_array, "IT4063C", dtype="U7")
 
 print(input_array.shape)
 print(result.shape)
 print(result)
 
 
-# In[ ]:
+# In[91]:
 
 
 # 🕵️ This code block checks your answer.
@@ -332,32 +355,32 @@ else:
 # - 📜 [`numpy.char.add` function](https://numpy.org/doc/stable/reference/generated/numpy.char.add.html)
 # 
 
-# In[ ]:
+# In[105]:
 
 
 def get_full_names(first_names, last_names):
-  return
+  return nb.char.add(nb.char.add(first_names, " "), last_names)
 
-sample_first_names = np.array(["Bob", "Jane", "Mallory"])
-sample_last_names = np.array(["Smith", "Jones", "Williams"])
-full_names = get_full_names(sample_first_names, sample_last_names);
+sample_first_names = nb.array(["Bob", "Jane", "Mallory"])
+sample_last_names = nb.array(["Smith", "Jones", "Williams"])
+full_names = get_full_names(sample_first_names, sample_last_names)
 print(full_names)
 
 
 # > 🚩 : Make a git commit here
 
-# In[ ]:
+# In[106]:
 
 
 # 🕵️ This code block checks your answer.
 # Test 1: Basic functionality
 try:
-    sample_first_names = np.array(["Bob", "Jane", "Mallory"])
-    sample_last_names = np.array(["Smith", "Jones", "Williams"])
-    expected_output = np.array(["Bob Smith", "Jane Jones", "Mallory Williams"])
+    sample_first_names = nb.array(["Bob", "Jane", "Mallory"])
+    sample_last_names = nb.array(["Smith", "Jones", "Williams"])
+    expected_output = nb.array(["Bob Smith", "Jane Jones", "Mallory Williams"])
     output = get_full_names(sample_first_names, sample_last_names)
 
-    assert np.array_equal(output, expected_output), f"Expected {expected_output}, but got {output}"
+    assert nb.array_equal(output, expected_output), f"Expected {expected_output}, but got {output}"
     
 except AssertionError as e:
     print(f"Test 1 Failed: {e}")
@@ -366,12 +389,12 @@ else:
 
 # Test 2: Empty strings or arrays
 try:
-    empty_first_names = np.array(["", "Jane", ""])
-    empty_last_names = np.array(["Smith", "", "Williams"])
-    expected_empty_output = np.array([" Smith", "Jane ", " Williams"])
+    empty_first_names = nb.array(["", "Jane", ""])
+    empty_last_names = nb.array(["Smith", "", "Williams"])
+    expected_empty_output = nb.array([" Smith", "Jane ", " Williams"])
     empty_output = get_full_names(empty_first_names, empty_last_names)
 
-    assert np.array_equal(empty_output, expected_empty_output), f"Expected {expected_empty_output}, but got {empty_output}"
+    assert nb.array_equal(empty_output, expected_empty_output), f"Expected {expected_empty_output}, but got {empty_output}"
 
 except AssertionError as e:
     print(f"Test 2 Failed: {e}")
@@ -390,8 +413,8 @@ else:
 # 🕵️ This code block checks your answer.
 # Test 3: For Extra Credit - Arrays of unequal lengths (This should raise an error)
 try:
-    unequal_first_names = np.array(["Bob"])
-    unequal_last_names = np.array(["Smith", "Jones"])
+    unequal_first_names = nb.array(["Bob"])
+    unequal_last_names = nb.array(["Smith", "Jones"])
     unequal_output = get_full_names(unequal_first_names, unequal_last_names)
     
 except ValueError:
@@ -410,7 +433,7 @@ else:
 # Remember to update the self reflection and self evaluations on the `README` file.
 # 
 
-# In[ ]:
+# In[109]:
 
 
 # 🦉: The following command converts this Jupyter notebook to a Python script.
